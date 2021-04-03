@@ -29,7 +29,7 @@
 }
 
 /* NavBar Container */
-.navbar_container {
+.navbar .navbar_container {
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -56,6 +56,11 @@
   cursor: pointer;
   font-size: 2rem;
   font-weight: bold;
+}
+
+/* NavBar Toggle */
+.navbar_container .navbar_toggle {
+  opacity: 0;
 }
 
 /* NavBar Menu */
@@ -90,7 +95,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0 1rem;
 }
 
 /* NavBar SignUp Button */
@@ -107,4 +111,61 @@
   background: linear-gradient(to right, #4bc0c8, #c779d0, #feac5e);
   color: var(--white-color);
   transition: all 0.3s ease;
+}
+
+/* Media Query */
+@media screen and (max-width: 960px) {
+  /* NavBar Container */
+  .navbar .navbar_container {
+    padding: 0;
+  }
+  /* NavBar Menu */
+  .navbar_container .navbar_menu {
+    display: grid;
+    grid-template-columns: auto;
+    margin-top: 50px;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+  /* NavBar Menu Active */
+  .navbar_menu.active {
+    background: var(--dark-black-color);
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 60vh;
+    font-size: 1.6rem;
+  }
+  /* NavBar Logo */
+  .navbar_container #navbar_logo {
+    padding-left: 25px;
+  }
+  /* NavBar Toggle */
+  .navbar_container .navbar_toggle {
+    opacity: 1;
+    color: var(--white-color);
+    margin: 25px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  /* NavBar Menu Item */
+  .navbar_menu .navbar_menu_item {
+    width: 100%;
+  }
+  /* NavBar Menu Links */
+  .navbar_menu_item .navbar_menu_links {
+    text-align: center;
+    width: 100%;
+  }
+  /* NavBar SignUp Button */
+  .navbar_menu_button .navbar_sign_up_button {
+    width: 70%;
+    height: 40px;
+    margin: 25px 0;
+  }
 }
